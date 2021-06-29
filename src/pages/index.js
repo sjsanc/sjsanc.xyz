@@ -28,7 +28,7 @@ const IndexPage = () => {
             <header>
                 <img src={LogoImage} id="logo" />
                 <h1>SJSANC.</h1>
-                <h2>UK-based software developer.</h2>
+                <h2>UK-based software engineer.</h2>
                 <h3>
                     <em>"People are fleeting; open source contributions are eternal."</em>
                 </h3>
