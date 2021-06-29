@@ -1,13 +1,12 @@
 import * as React from "react";
 import "../styles/global.scss";
-import { StaticImage } from "gatsby-plugin-image";
 import LogoImage from "../images/logo.png";
 
 const projects = [
   {
     name: "An Imperial Simulation",
     description: "A strategy game about empires.",
-    link: "",
+    link: "https://github.com/sjsanc/an-imperial-simulation",
   },
   {
     name: "Mnemonist",
@@ -56,6 +55,7 @@ const IndexPage = () => {
         </ul>
       </header>
       <main>
+        <h2>Projects</h2>
         <div class="projects">
           {projects.map((proj) => (
             <a class="project" href={proj.link}>
@@ -64,6 +64,7 @@ const IndexPage = () => {
             </a>
           ))}
         </div>
+        <h2>Other Stuff</h2>
         <div class="projects">
           {otherstuff.map((proj) => (
             <a class="project" href={proj.link}>
