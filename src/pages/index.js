@@ -21,6 +21,19 @@ const projects = [
   },
 ];
 
+const otherstuff = [
+  {
+    name: "Risuto",
+    description: "An early playaround with CoinGecko's API",
+    link: "https://github.com/sjsanc/risuto-crypto",
+  },
+  {
+    name: "osticket-ticketwidget",
+    description: "A simple tracker userscript for osTicket",
+    link: "https://github.com/sjsanc/osticket-ticketwidget",
+  },
+];
+
 const IndexPage = () => {
   return (
     <div class="container">
@@ -35,6 +48,9 @@ const IndexPage = () => {
             <a href="https://github.com/sjsanc">Github</a>
           </li>
           <li>
+            <a href="https://gist.github.com/sjsanc">Gist</a>
+          </li>
+          <li>
             <a href="https://linkedin.com/in/steven-scheepers-72b45b131">Linkedin</a>
           </li>
         </ul>
@@ -42,6 +58,14 @@ const IndexPage = () => {
       <main>
         <div class="projects">
           {projects.map((proj) => (
+            <a class="project" href={proj.link}>
+              <h3>{proj.name}</h3>
+              <p>{proj.description}</p>
+            </a>
+          ))}
+        </div>
+        <div class="projects">
+          {otherstuff.map((proj) => (
             <a class="project" href={proj.link}>
               <h3>{proj.name}</h3>
               <p>{proj.description}</p>
