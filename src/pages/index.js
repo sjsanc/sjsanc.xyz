@@ -1,6 +1,9 @@
 import * as React from "react";
+import Helmet from "react-helmet";
+import { withPrefix } from "gatsby";
 import "../styles/global.scss";
 import LogoImage from "../images/logo.png";
+import SEO from "../components/seo";
 
 const projects = [
   {
@@ -33,15 +36,32 @@ const otherstuff = [
   },
 ];
 
+const quotes = [
+  "People are fleeting; open source contributions are eternal.",
+  "Judah family bun her, she's dirt on a real ting G",
+  "All the best portfolios feature arbitrary, randomly-selected quotes",
+  "Zug Zug",
+];
+
+const randomiser = (array) => {
+  return array[~~Math.random() * array.length];
+};
+
 const IndexPage = () => {
   return (
     <div class="container">
       <title>Home Page</title>
       <header>
-        <img src={LogoImage} id="logo" />
+        <Helmet>
+          <script src={withPrefix("scripts.js")} type="text/javascript" />
+        </Helmet>
+        <SEO />
+        <img src={LogoImage} alt="Portal key icon from Heroes of Newerth" id="logo" />
         <h1>SJSANC.</h1>
         <h2>UK-based software developer.</h2>
-        <h3>"People are fleeting; open source contributions are eternal."</h3>
+        <h3>
+          <em>"{randomiser(quotes)}"</em>
+        </h3>
         <ul class="socials">
           <li>
             <a href="https://github.com/sjsanc">Github</a>
