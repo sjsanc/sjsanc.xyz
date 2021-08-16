@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
+    "browser-monads": "^1.0.0",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^1.8.0",

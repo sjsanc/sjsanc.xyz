@@ -4,6 +4,7 @@ import SEO from "./seo";
 import "../styles/global.scss";
 import { navigate } from "gatsby";
 import Slideout from "./Slideout";
+import { window } from "browser-monads";
 
 const pages = ["Bio", "Projects", "Writing", "Library", "Contact"];
 
@@ -11,13 +12,14 @@ const Layout = (props: { children? }) => {
   const [section, setSection] = useState<string>();
 
   useEffect(() => {
-    let s = location.pathname.replace("/", "");
+    let s = window.location.pathname.replace("/", "");
     setSection(s.charAt(0).toUpperCase() + s.slice(1));
+    console.log(window);
   }, []);
 
   const changeSection = (evt) => {
     const section = evt.target.innerText.toLowerCase();
-    const current = location.pathname.toLowerCase().replace("/", "");
+    const current = window.location.pathname.toLowerCase().replace("/", "");
 
     evt.preventDefault();
     if (section == current) {

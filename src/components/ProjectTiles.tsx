@@ -20,15 +20,18 @@ const getInitials = (str: string) => {
 export default function ProjectTiles() {
   return (
     <div className="tilegrid">
-      {ProjectJSON.content.map((tile: ProjectTile) => (
+      {ProjectJSON.content.map((tile: ProjectTile, i) => (
         <div
+          key={i}
           className="tile"
           style={{ backgroundColor: tile.colors.primary, color: tile.colors.secondary }}>
           <h2>{tile.name}</h2>
           <p>{tile.desc}</p>
           <div>
-            {tile.links.map((li) => (
-              <a href={li.link}>{li.key}</a>
+            {tile.links.map((li, i) => (
+              <a key={i} href={li.link}>
+                {li.key}
+              </a>
             ))}
           </div>
         </div>
