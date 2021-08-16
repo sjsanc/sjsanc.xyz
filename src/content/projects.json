@@ -1,0 +1,84 @@
+{
+  "title": "JSON content for the projects page",
+  "content": [
+    {
+      "name": "Bellum Mechanica",
+      "picture": "",
+      "desc": "Design an engine capable of automating robo-warfare, then direct your bots to victory against other player-written AI. Inspired by chess, autochess & Battlesnakes",
+      "colors": {
+        "primary": "#16171D",
+        "secondary": "#fff"
+      },
+      "links": [
+        {
+          "key": "Github",
+          "link": ""
+        },
+        {
+          "key": "Project Site",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "name": "An Imperial Simulation",
+      "picture": "",
+      "desc": "A strategy game about simulation, artifacts and empires. Raise a settlement from the dirt and conquer beyond the known world.",
+      "colors": {
+        "primary": "#fff",
+        "secondary": "#000"
+      },
+      "links": [
+        {
+          "key": "Github",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "name": "AloeCMS",
+      "picture": "",
+      "desc": "A lightweight, detail-oriented CMS built in Typescript",
+      "colors": {
+        "primary": "#6C9618",
+        "secondary": "#fff"
+      },
+      "links": [
+        {
+          "key": "Github",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "name": "Mnemonist",
+      "picture": "",
+      "desc": "A guided language learning platform that encourages users to develop their knowledge by treating it as a database.",
+      "colors": {
+        "primary": "#F2F4DC",
+        "secondary": "#222222"
+      },
+      "links": [
+        {
+          "key": "Github",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "name": "SpawnerJS",
+      "picture": "",
+      "desc": "A functional-style framework for building Javascript UIs",
+      "colors": {
+        "primary": "#FF7D7D",
+        "secondary": "#222222"
+      },
+      "links": [
+        {
+          "key": "Github",
+          "link": ""
+        }
+      ]
+    }
+  ]
+}
