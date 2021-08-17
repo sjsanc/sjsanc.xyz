@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../components/Layout";
-import ProjectTiles from "../components/ProjectTiles";
+import TileGrid from "../components/TileGrid";
 
 export default function ProjectsPage() {
   return (
     <Layout>
-      <ProjectTiles />
+      <TileGrid />
     </Layout>
   );
 }

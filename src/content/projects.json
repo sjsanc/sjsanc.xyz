@@ -2,6 +2,16 @@
   "title": "JSON content for the projects page",
   "content": [
     {
+      "name": "Projects",
+      "picture": "",
+      "desc": "Here's a selection of projects I've been working on",
+      "colors": {
+        "primary": "#DEDBD7",
+        "secondary": "#000"
+      },
+      "links": []
+    },
+    {
       "name": "Bellum Mechanica",
       "picture": "",
       "desc": "Design an engine capable of automating robo-warfare, then direct your bots to victory against other player-written AI. Inspired by chess, autochess & Battlesnakes",

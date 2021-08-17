@@ -7,13 +7,10 @@ export default function BioPage() {
   return (
     <Layout>
       <div className="bio">
-        <div className="bio__media">
-          <img src={Banner} id="banner" alt="Overlooking the mesetas" />
-        </div>
-        <label htmlFor="banner">Overlooking the mesetas</label>
+        <img className="bio__media" src={Banner} id="banner" alt="Overlooking the mesetas" />
         <p>
-          I'm a software engineer living in the UK. I like making games, especially management
-          simulator and strategy games. I also have a BA in Philosophy.
+          I'm a software engineer living in the UK. I like building management simulators, and
+          writing software to help with learning.
           <br />
           <br />
           As a hobby I like to write fiction, usually fantasy or sci-fi flavoured but not always.
