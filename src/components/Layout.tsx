@@ -75,14 +75,31 @@ const Background = styled.div`
   background-repeat: repeat;
   background-size: 300px;
   opacity: 0.1;
+  z-index: -1;
   pointer-events: none;
 `;
 
 const Menu = styled.div`
   max-width: 400px;
+
   p,
   h1 {
     margin: 15px 0 15px 0;
+  }
+
+  p {
+    background: rgb(28, 28, 28);
+    color: white;
+    border-radius: 10px;
+    border: 5px solid white;
+    padding: 15px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  }
+
+  p::selection {
+    background: white;
+    color: rgb(28, 28, 28);
   }
 `;
 
