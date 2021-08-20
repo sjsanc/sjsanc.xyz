@@ -22,7 +22,7 @@ export default function TileGrid() {
   return (
     <StyledGrid>
       {ProjectJSON.content.map((tile: ProjectTile, i) => (
-        <Tile index={i} tile={tile} />
+        <Tile key={i} index={i} tile={tile} />
       ))}
     </StyledGrid>
   );
@@ -30,8 +30,12 @@ export default function TileGrid() {
 
 const StyledGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   grid-auto-rows: 1fr;
+
+  @media screen and (max-width: 567px) {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
 
   &::before {
     content: "";

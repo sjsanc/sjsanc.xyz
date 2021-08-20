@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export interface TileProps {
@@ -25,6 +25,7 @@ export default function Tile(props: { tile: TileProps; index: number }) {
           </a>;
         })}
       </div>
+      <TileView></TileView>
     </StyledTile>
   );
 }
@@ -47,8 +48,14 @@ const StyledTile = styled.div`
     color: inherit;
   }
 
-  p {
+  p,
+  h2 {
     text-align: center;
+  }
+
+  @media screen and (max-width: 567px) {
+    font-size: 0.7rem;
+    padding: 15px;
   }
 
   &:not(:first-of-type) {
@@ -63,3 +70,5 @@ const StyledTile = styled.div`
     }
   }
 `;
+
+const TileView = styled.div``;

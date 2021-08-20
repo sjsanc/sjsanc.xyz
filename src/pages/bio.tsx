@@ -8,13 +8,7 @@ export default function BioPage() {
     <Layout>
       <div className="bio">
         <img className="bio__media" src={Banner} id="banner" alt="Overlooking the mesetas" />
-        <p>
-          I'm a software engineer living in the UK. I like building management simulators, and
-          writing software to help with learning.
-          <br />
-          <br />
-          As a hobby I like to write fiction, usually fantasy or sci-fi flavoured but not always.
-        </p>
+        <p></p>
       </div>
     </Layout>
   );

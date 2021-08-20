@@ -1,5 +1,12 @@
 import React from "react";
+import Layout from "../components/Layout";
 
 export default function WritingPage() {
-  return <div>Hi</div>;
+  return (
+    <Layout>
+      <div>
+        <p></p>
+      </div>
+    </Layout>
+  );
 }

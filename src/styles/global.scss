@@ -10,10 +10,6 @@ $faded_dark: rgba(28, 28, 28, 0.8);
   box-sizing: border-box;
 }
 
-html {
-  overflow-y: hidden;
-}
-
 h1,
 h2,
 h3,
@@ -36,85 +32,7 @@ label {
   background: transparent;
 }
 
-$slideout_width: 50vw;
-@media screen and (max-width: 992px) {
-  $slideout_width: 100vw;
-}
-
-.slideout {
-  position: fixed;
-  right: 0;
-  width: $slideout_width;
-  top: 0;
-  transition: 0.2s ease-in-out;
-  transform: translateX($slideout_width);
-  z-index: 10;
-  height: 90vh;
-  border-top: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-
-  @media screen and (max-width: 992px) {
-    width: 100vw;
-    transform: translateX(100vw);
-  }
-
-  &--expanded {
-    transform: translateX(0vw);
-  }
-
-  &--closed {
-    transform: translateX($slideout_width);
-  }
-
-  &__inner {
-    position: relative;
-    height: 100vh;
-    overflow-y: scroll;
-    border-bottom: 30px solid transparent;
-  }
-
-  &__controls {
-    position: fixed;
-    left: -200px;
-    top: 0;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    color: black;
-
-    @media screen and (max-width: 992px) {
-      left: 0;
-      width: 100%;
-      z-index: 10;
-    }
-
-    * {
-      background: rgb(28, 28, 28);
-      padding: 5px 12px;
-      color: white;
-      display: flex;
-      align-items: center;
-    }
-
-    button {
-      font-size: 24px;
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.3s ease-in-out;
-
-      &:hover {
-        background: #e3e3e3;
-        color: $text;
-        transition: 0.3s ease-in-out;
-      }
-    }
-  }
-}
-
+//
 .art {
   position: absolute;
   right: 20px;
@@ -160,21 +78,6 @@ $slideout_width: 50vw;
 }
 
 //
-.container {
-  padding: 64px;
-
-  @media screen and (max-width: 992px) {
-    padding: 32px;
-  }
-}
-
-#logo {
-  border-radius: 50%;
-  height: 64px;
-  width: 64px;
-  border: 5px solid rgb(233, 233, 233);
-}
-
 .projects {
   display: flex;
   flex-wrap: wrap;

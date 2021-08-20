@@ -11,12 +11,16 @@ import styled from "styled-components";
 const pages = ["Bio", "Projects", "Writing", "Library", "Contact"];
 
 const Layout = (props: { children? }) => {
-  const [section, setSection] = useState<string>();
+  const [currentSection, setCurrentSection] = useState<string>();
+  const [expanded, setExpanded] = useState<boolean>();
 
   useEffect(() => {
     let s = window.location.pathname.replace("/", "");
-    setSection(s.charAt(0).toUpperCase() + s.slice(1));
-    console.log(window);
+    setCurrentSection(s.charAt(0).toUpperCase() + s.slice(1));
+  }, []);
+
+  useEffect(() => {
+    currentSection !== "" ? setExpanded(true) : null;
   }, []);
 
   const changeSection = (evt) => {
@@ -25,28 +29,35 @@ const Layout = (props: { children? }) => {
 
     evt.preventDefault();
     if (section == current) {
-      navigate("/");
+      closeSection();
     } else {
+      setExpanded(true);
       navigate(`/${section}`);
     }
   };
 
+  const closeSection = (): void => {
+    setExpanded(false);
+    setTimeout(() => {
+      navigate("/");
+    }, 200);
+  };
+
   return (
-    <OuterWrapper>
+    <OuterWrapper id="outerWrapper">
       <header>
         <SEO />
       </header>
-      <Menu className="container menu">
-        <img src={LogoImage} alt="Portal key icon from Heroes of Newerth" id="logo" />
+      <Menu locked={currentSection !== ""} id="menu">
+        <Logo src={LogoImage} alt="Portal key icon from Heroes of Newerth" />
         <h1>SJSANC.</h1>
         <p>
-          Welcome to my personal website, a digital homestead of sorts. Maybe you'll find something
-          that interests you?
+          Hi -- welcome to my website. I'm a software engineer from the UK. I also like writing.
         </p>
         <Links className="pages">
           {pages.map((btn, i) => (
             <a
-              className={btn == section ? "activeLink" : ""}
+              className={btn == currentSection ? "activeLink" : ""}
               key={i}
               href={"/" + btn.toLowerCase()}
               onClick={changeSection}>
@@ -55,23 +66,48 @@ const Layout = (props: { children? }) => {
           ))}
         </Links>
       </Menu>
-      {props.children ? <Slideout>{props.children}</Slideout> : null}
-      <Background style={{ backgroundImage: `url(${TileImage})` }}></Background>
+      {props.children ? (
+        <Slideout close={closeSection} expanded={expanded}>
+          {props.children}
+        </Slideout>
+      ) : null}
+      <Faded active={currentSection !== ""} id="fadedBackground"></Faded>
+      <Background
+        style={{ backgroundImage: `url(${TileImage})` }}
+        id="patternedBackground"></Background>
     </OuterWrapper>
   );
 };
 
+const Faded = styled.div`
+  position: fixed;
+  inset: 0 0 0 0;
+  background: black;
+  opacity: ${(props) => (props.active ? 0.5 : 0)};
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+`;
+
+const Logo = styled.img`
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  border: 5px solid rgb(233, 233, 233);
+`;
+
 const OuterWrapper = styled.div`
   height: 100vh;
   border: 15px solid rgb(28, 28, 28);
+  overflow-y: scroll;
 `;
 
 const Background = styled.div`
+  min-height: 100vh;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: fixed;
+  inset: 0 0 0 0;
   background-repeat: repeat;
   background-size: 300px;
   opacity: 0.1;
@@ -81,6 +117,12 @@ const Background = styled.div`
 
 const Menu = styled.div`
   max-width: 400px;
+  padding: 64px;
+  overflow-y: ${(props) => (props.locked ? "hidden" : "auto")};
+
+  @media screen and (max-width: 992px) {
+    padding: 32px;
+  }
 
   p,
   h1 {
