@@ -2,16 +2,6 @@
   "title": "JSON content for the projects page",
   "content": [
     {
-      "name": "Projects",
-      "picture": "",
-      "desc": "Here's a selection of projects I've been working on",
-      "colors": {
-        "primary": "#DEDBD7",
-        "secondary": "#000"
-      },
-      "links": []
-    },
-    {
       "name": "Bellum Mechanica",
       "picture": "",
       "desc": "Design an engine capable of automating robo-warfare, then direct your bots to victory against other player-written AI. Inspired by chess, autochess & Battlesnakes",
@@ -25,7 +15,7 @@
           "link": ""
         },
         {
-          "key": "Project Site",
+          "key": "Website",
           "link": ""
         }
       ]
@@ -33,7 +23,7 @@
     {
       "name": "An Imperial Simulation",
       "picture": "",
-      "desc": "A strategy game about simulation, artifacts and empires. Raise a settlement from the dirt and conquer beyond the known world.",
+      "desc": "An empire simulator that takes inspiration from Orteil's Neverending Legacy. Build and nurture a settlement in a hostile world.",
       "colors": {
         "primary": "#fff",
         "secondary": "#000"
@@ -48,7 +38,7 @@
     {
       "name": "AloeCMS",
       "picture": "",
-      "desc": "A lightweight, detail-oriented CMS built in Typescript",
+      "desc": "A lightweight, detail-oriented CMS written in Typescript.",
       "colors": {
         "primary": "#6C9618",
         "secondary": "#fff"
@@ -63,9 +53,24 @@
     {
       "name": "Mnemonist",
       "picture": "",
-      "desc": "A guided language learning platform that encourages users to develop their knowledge by treating it as a database.",
+      "desc": "An opinionated tool for memorising language vocabulary (or any other set of information), that encourages users to treat their knowledge like a database.",
       "colors": {
         "primary": "#F2F4DC",
+        "secondary": "#222222"
+      },
+      "links": [
+        {
+          "key": "Website",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "name": "Realmforge",
+      "picture": "",
+      "desc": "A collaborative worldbuilding platform combined with online roleplaying and idle game mechanics.",
+      "colors": {
+        "primary": "#FF7D7D",
         "secondary": "#222222"
       },
       "links": [
@@ -78,7 +83,7 @@
     {
       "name": "SpawnerJS",
       "picture": "",
-      "desc": "A functional-style framework for building Javascript UIs",
+      "desc": "Another framework for building Javascript UIs in a functional style. Originally written because I didn't want to learn PHP or jQuery.",
       "colors": {
         "primary": "#FF7D7D",
         "secondary": "#222222"
