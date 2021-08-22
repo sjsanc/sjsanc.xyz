@@ -7,6 +7,7 @@ import { navigate } from "gatsby";
 import Slideout from "./Slideout";
 import { window } from "browser-monads";
 import styled from "styled-components";
+import theme from "../styles/theme";
 
 const pages = ["Projects", "Contact"];
 
@@ -52,7 +53,8 @@ const Layout = (props: { children? }) => {
         <Logo src={LogoImage} alt="Portal key icon from Heroes of Newerth" />
         <h1>SJSANC.</h1>
         <p>
-          Hi -- welcome to my website. I'm a software engineer from the UK. I also like writing.
+          Hi -- welcome to my website. I'm a software engineer from the UK. I really like simulation
+          games.
         </p>
         <Links className="pages">
           {pages.map((btn, i) => (
@@ -89,17 +91,16 @@ const Faded = styled.div<{ active: boolean }>`
 `;
 
 const Logo = styled.img`
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: ${theme.boxShadow};
   border-radius: 50%;
   height: 64px;
   width: 64px;
-  border: 5px solid rgb(233, 233, 233);
+  border: 5px solid white;
 `;
 
 const OuterWrapper = styled.div`
   height: 100vh;
-  border: 15px solid rgb(28, 28, 28);
+  border: 15px solid ${theme.colors.dark};
   overflow-y: scroll;
 `;
 
@@ -130,18 +131,17 @@ const Menu = styled.div<{ locked: boolean }>`
   }
 
   p {
-    background: rgb(28, 28, 28);
+    background: ${theme.colors.dark};
     color: white;
     border-radius: 10px;
     border: 5px solid white;
     padding: 15px;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: ${theme.boxShadow};
   }
 
   p::selection {
     background: white;
-    color: rgb(28, 28, 28);
+    color: ${theme.colors.dark};
   }
 `;
 
@@ -152,43 +152,11 @@ const Links = styled.ul`
   a {
     text-decoration: none;
     margin: 10px 0;
-    /* padding: 5px 8px; */
     position: relative;
     font-size: 25px;
     transition: 0.1s ease-in-out;
-    /* color: white; */
-    color: rgb(28, 28, 28);
+    color: ${theme.colors.dark};
     font-weight: 600;
-
-    /* &:before,
-    &:after {
-      content: "";
-      display: inline-block;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-      transition: 0.3s ease-in-out;
-      mix-blend-mode: difference;
-    }
-
-    &:before {
-      height: 0;
-      background: white;
-    }
-
-    &:after {
-      height: 100%;
-      background: rgb(28, 28, 28);
-    }
-
-    &:hover {
-      text-decoration: none;
-
-      &:before {
-        height: 100%;
-      }
-    } */
   }
   .activeLink {
     &:before {

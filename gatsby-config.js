@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "sjsanc.xyz",
     titleTemplate: "%s · Zug Zug",
-    description: "Personal site of sjsanc",
+    description: "Personal site for sjsanc",
     url: "http://www.sjsanc.xyz", // No trailing slash allowed!
     image: "/logo.png", // Path to your image you placed in the 'static' folder
   },
