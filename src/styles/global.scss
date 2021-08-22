@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
 
 $text: rgb(28, 28, 28);
 $faded_dark: rgba(28, 28, 28, 0.8);
@@ -83,25 +83,6 @@ label {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
-}
-
-.project {
-  height: auto;
-  width: 248px;
-  padding: 15px;
-  border: 2px solid rgb(28, 28, 28);
-  display: flex;
-  flex-direction: column;
-  margin: 0 25px 15px 0;
-  text-decoration: none;
-
-  h3 {
-    margin: 0 0 5px 0;
-  }
-
-  @media screen and (max-width: 992px) {
-    width: 100%;
-  }
 }
 
 .socials {

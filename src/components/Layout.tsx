@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LogoImage from "../images/logo.png";
-import TileImage from "../images/tile.jpg";
+import TileImage from "../images/tile-small.jpg";
 import SEO from "./seo";
 import "../styles/global.scss";
 import { navigate } from "gatsby";
@@ -8,7 +8,7 @@ import Slideout from "./Slideout";
 import { window } from "browser-monads";
 import styled from "styled-components";
 
-const pages = ["Bio", "Projects", "Writing", "Library", "Contact"];
+const pages = ["Projects", "Contact"];
 
 const Layout = (props: { children? }) => {
   const [currentSection, setCurrentSection] = useState<string>();
@@ -71,7 +71,7 @@ const Layout = (props: { children? }) => {
           {props.children}
         </Slideout>
       ) : null}
-      <Faded active={currentSection !== ""} id="fadedBackground"></Faded>
+      <Faded active={currentSection !== ""} id="fadedBackground" onClick={closeSection}></Faded>
       <Background
         style={{ backgroundImage: `url(${TileImage})` }}
         id="patternedBackground"></Background>
@@ -79,13 +79,13 @@ const Layout = (props: { children? }) => {
   );
 };
 
-const Faded = styled.div`
+const Faded = styled.div<{ active: boolean }>`
   position: fixed;
   inset: 0 0 0 0;
   background: black;
   opacity: ${(props) => (props.active ? 0.5 : 0)};
   transition: 0.3s ease-in-out;
-  pointer-events: none;
+  pointer-events: ${(props) => (props.active ? "" : "none")};
 `;
 
 const Logo = styled.img`
@@ -115,7 +115,7 @@ const Background = styled.div`
   pointer-events: none;
 `;
 
-const Menu = styled.div`
+const Menu = styled.div<{ locked: boolean }>`
   max-width: 400px;
   padding: 64px;
   overflow-y: ${(props) => (props.locked ? "hidden" : "auto")};
@@ -152,14 +152,15 @@ const Links = styled.ul`
   a {
     text-decoration: none;
     margin: 10px 0;
-    padding: 5px 8px;
+    /* padding: 5px 8px; */
     position: relative;
     font-size: 25px;
     transition: 0.1s ease-in-out;
-    color: white;
-    font-weight: 500;
+    /* color: white; */
+    color: rgb(28, 28, 28);
+    font-weight: 600;
 
-    &:before,
+    /* &:before,
     &:after {
       content: "";
       display: inline-block;
@@ -187,7 +188,7 @@ const Links = styled.ul`
       &:before {
         height: 100%;
       }
-    }
+    } */
   }
   .activeLink {
     &:before {

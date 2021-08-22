@@ -22,5 +22,11 @@ module.exports = {
       },
       __key: "pages",
     },
+    // {
+    //   resolve: "gatsby-plugin-layout",
+    //   options: {
+    //     component: require.resolve(`./components/Layout`),
+    //   },
+    // },
   ],
 };

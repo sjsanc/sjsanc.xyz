@@ -38,7 +38,7 @@
     {
       "name": "AloeCMS",
       "picture": "",
-      "desc": "A lightweight, detail-oriented CMS written in Typescript.",
+      "desc": "A lightweight, detail-oriented and semi-modular CMS, built as a custom backend for Swimhistory.co.za",
       "colors": {
         "primary": "#6C9618",
         "secondary": "#fff"

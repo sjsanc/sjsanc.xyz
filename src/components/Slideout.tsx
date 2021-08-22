@@ -27,7 +27,7 @@ export default function Slideout(props: { children?; expanded: boolean; close: (
   );
 }
 
-const StyledSlideout = styled.div`
+const StyledSlideout = styled.div<{ expanded: boolean }>`
   position: fixed;
   right: 0;
   width: 50vw;
