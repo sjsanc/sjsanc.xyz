@@ -3,36 +3,51 @@ import Layout from "../components/Layout";
 import TileGrid from "../components/TileGrid";
 import styled from "styled-components";
 
-interface ProjectTile {
+interface ProjectInterface {
   name: string;
-  picture: string;
   desc: string;
-  links: Array<{ key: string; link: string }>;
-  colors: { primary: string; secondary: string };
+  github?: string;
+  website?: string;
 }
 
 import ProjectJSON from "../content/projects.json";
+import { graphql, useStaticQuery } from "gatsby";
+
+const query = graphql`
+  query ProjectsQuery {
+    allProjectsJson {
+      edges {
+        node {
+          name
+          desc
+          github
+          website
+        }
+      }
+    }
+  }
+`;
 
 export default function ProjectsPage() {
+  const projects: ProjectInterface[] = useStaticQuery(query)?.allProjectsJson.edges.map(
+    (x) => x.node
+  );
+
   return (
     <Layout>
-      {/* <TileGrid /> */}
       <Projects>
         <h1>Projects</h1>
         <p>Here's a collection of stuff I'm working on:</p>
         <div className="projectList">
-          {ProjectJSON.content.map((project: ProjectTile, i) => (
+          {projects.map((proj: ProjectInterface, i) => (
             <div className="project" key={i}>
               <span>
-                <h3>{project.name}</h3>
+                <h3>{proj.name}</h3>
               </span>
-              <p>{project.desc}</p>
+              <p>{proj.desc}</p>
               <div>
-                {project.links.map((li, i) => (
-                  <a key={i} href={li.link}>
-                    {li.key}
-                  </a>
-                ))}
+                {proj.github && <a href={proj.github}>Github</a>}
+                {proj.website && <a href={proj.website}>Website</a>}
               </div>
             </div>
           ))}

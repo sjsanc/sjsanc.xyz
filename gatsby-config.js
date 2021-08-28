@@ -14,19 +14,20 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-transformer-json",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "projects",
+        path: `${__dirname}/src/content`,
       },
-      __key: "pages",
     },
-    // {
-    //   resolve: "gatsby-plugin-layout",
-    //   options: {
-    //     component: require.resolve(`./components/Layout`),
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
   ],
 };
