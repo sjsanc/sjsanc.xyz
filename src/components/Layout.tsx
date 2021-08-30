@@ -8,12 +8,15 @@ import Slideout from "./Slideout";
 import { window } from "browser-monads";
 import styled from "styled-components";
 import theme from "../styles/theme";
+import axios from "axios";
+import { useStore } from "../hooks/useStore";
 
 const pages = ["Projects", "Contact"];
 
 const Layout = (props: { children? }) => {
   const [currentSection, setCurrentSection] = useState<string>();
   const [expanded, setExpanded] = useState<boolean>();
+  // const { data, setData } = useStore();
 
   useEffect(() => {
     let s = window.location.pathname.replace("/", "");
