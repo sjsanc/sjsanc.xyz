@@ -1,13 +1,14 @@
 import React from "react";
 import Layout from "../components/Layout";
-import TileGrid from "../components/TileGrid";
 import styled from "styled-components";
+import Tag from "../components/Tag";
 
 interface ProjectInterface {
   name: string;
   desc: string;
   github?: string;
   website?: string;
+  tags?: string[];
 }
 
 import ProjectJSON from "../content/projects.json";
@@ -22,6 +23,7 @@ const query = graphql`
           desc
           github
           website
+          tags
         }
       }
     }
@@ -41,9 +43,12 @@ export default function ProjectsPage() {
         <div className="projectList">
           {projects.map((proj: ProjectInterface, i) => (
             <div className="project" key={i}>
-              <span>
-                <h3>{proj.name}</h3>
-              </span>
+              <h3>{proj.name}</h3>
+              <div>
+                {proj.tags.map((tag: string, i) => (
+                  <Tag name={tag} />
+                ))}
+              </div>
               <p>{proj.desc}</p>
               <div>
                 {proj.github && <a href={proj.github}>Github</a>}
@@ -80,19 +85,14 @@ const Projects = styled.div`
   }
 
   .project {
-    > div {
-      padding-top: 8px;
+    > *:not(h3) {
+      margin-bottom: 5px;
     }
   }
 
   a {
     margin-right: 15px;
   }
-
-  p {
-    margin-top: 8px;
-  }
-
   p,
   a {
     font-family: "Roboto Condensed", sans-serf;

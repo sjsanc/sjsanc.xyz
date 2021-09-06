@@ -18,6 +18,7 @@
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.13.2",
     "browser-monads": "^1.0.0",
+    "dotenv": "^10.0.0",
     "feather-icons-react": "^0.4.3",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.11.0",
