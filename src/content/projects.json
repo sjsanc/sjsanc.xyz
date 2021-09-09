@@ -2,30 +2,36 @@
     {
         "name": "sjsanc.xyz",
         "desc": "This website! A labour of love, built with Gatsby.",
-        "github": "https://github.com/sjsanc/sjsanc.xyz"
+        "github": "https://github.com/sjsanc/sjsanc.xyz",
+        "website": "",
+        "tags": ["typescript"]
     },
     {
         "name": "Bellum Mechanica",
         "desc": "Design an engine capable of automating robo-warfare, then direct your bots to victory against other player-written AI. Inspired by chess, autochess & Battlesnakes",
         "github": "https://github.com/sjsanc?tab=repositories&q=bellum&type=&language=&sort=",
-        "website": ""
+        "website": "",
+        "tags": ["typescript", "game"]
     },
     {
         "name": "An Imperial Simulation",
         "desc": "An empire simulator that takes inspiration from Orteil's Neverending Legacy. Build and nurture a settlement in a hostile world.",
         "github": "https://github.com/sjsanc/an-imperial-simulation",
-        "website": "https://an-imperial-simulation.netlify.app/"
+        "website": "https://an-imperial-simulation.netlify.app/",
+        "tags": ["typescript", "game"]
     },
     {
         "name": "SpawnerJS",
         "desc": "Another framework for building Javascript UIs in a functional style. Originally written because I didn't want to learn PHP or jQuery.",
         "github": "https://github.com/sjsanc/spawnerjs",
-        "website": ""
+        "website": "",
+        "tags": ["typescript", "framework"]
     },
     {
         "name": "RisutoCrypto",
         "desc": "A little demonstrative dashboard displaying current crypto prices",
         "github": "https://github.com/sjsanc/risuto-crypto",
-        "website": "https://confident-sammet-b6edfe.netlify.app/"
+        "website": "https://confident-sammet-b6edfe.netlify.app/",
+        "tags": ["typescript", "demo"]
     }
 ]

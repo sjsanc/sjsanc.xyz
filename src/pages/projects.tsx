@@ -2,16 +2,16 @@ import React from "react";
 import Layout from "../components/Layout";
 import TileGrid from "../components/TileGrid";
 import styled from "styled-components";
+import Tag from "../components/Tag";
+import { graphql, useStaticQuery } from "gatsby";
 
 interface ProjectInterface {
     name: string;
     desc: string;
     github?: string;
     website?: string;
+    tags?: string[];
 }
-
-import ProjectJSON from "../content/projects.json";
-import { graphql, useStaticQuery } from "gatsby";
 
 const query = graphql`
     query ProjectsQuery {
@@ -22,6 +22,7 @@ const query = graphql`
                     desc
                     github
                     website
+                    tags
                 }
             }
         }
@@ -42,6 +43,11 @@ export default function ProjectsPage() {
                             <span>
                                 <h3>{proj.name}</h3>
                             </span>
+                            <div>
+                                {proj.tags.map((tag) => (
+                                    <Tag text={tag} />
+                                ))}
+                            </div>
                             <p>{proj.desc}</p>
                             <div>
                                 {proj.github && (
@@ -77,7 +83,7 @@ const Projects = styled.div`
     .projectList {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 25px;
+        grid-gap: 20px;
         margin-top: 30px;
 
         @media screen and (max-width: 992px) {
@@ -85,28 +91,16 @@ const Projects = styled.div`
         }
     }
 
-    .project {
-        > div {
-            padding-top: 8px;
-        }
+    .project > * {
+        margin-bottom: 5px;
     }
 
     a {
         margin-right: 15px;
     }
 
-    p {
-        margin-top: 8px;
-    }
-
     p,
     a {
         font-family: "Roboto Condensed", sans-serf;
-    }
-
-    span {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
 `;
