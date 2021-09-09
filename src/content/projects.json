@@ -1,38 +1,31 @@
 [
-  {
-    "name": "Bellum Mechanica",
-    "desc": "Design an engine capable of automating robo-warfare, then direct your bots to victory against other player-written AI. Inspired by chess, autochess & Battlesnakes",
-    "github": "https://github.com/sjsanc/bellum-mechanica-engine",
-    "website": ""
-  },
-  {
-    "name": "An Imperial Simulation",
-    "desc": "An empire simulator that takes inspiration from Orteil's Neverending Legacy. Build and nurture a settlement in a hostile world.",
-    "github": "https://github.com/sjsanc/an-imperial-simulation",
-    "website": ""
-  },
-  {
-    "name": "AloeCMS",
-    "desc": "A lightweight, detail-oriented and semi-modular CMS, built as a custom backend for Swimhistory.co.za",
-    "github": "https://github.com/sjsanc/spawnerjs",
-    "website": ""
-  },
-  {
-    "name": "Mnemonist",
-    "desc": "An opinionated tool for memorising language vocabulary (or any other set of information), that encourages users to treat their knowledge like a database.",
-    "github": "https://github.com/sjsanc/spawnerjs",
-    "website": ""
-  },
-  {
-    "name": "Realmforge",
-    "desc": "A collaborative worldbuilding platform combined with online roleplaying and idle game mechanics.",
-    "github": "https://github.com/sjsanc/spawnerjs",
-    "website": ""
-  },
-  {
-    "name": "SpawnerJS",
-    "desc": "Another framework for building Javascript UIs in a functional style. Originally written because I didn't want to learn PHP or jQuery.",
-    "github": "https://github.com/sjsanc/spawnerjs",
-    "website": ""
-  }
+    {
+        "name": "sjsanc.xyz",
+        "desc": "This website! A labour of love, built with Gatsby.",
+        "github": "https://github.com/sjsanc/sjsanc.xyz"
+    },
+    {
+        "name": "Bellum Mechanica",
+        "desc": "Design an engine capable of automating robo-warfare, then direct your bots to victory against other player-written AI. Inspired by chess, autochess & Battlesnakes",
+        "github": "https://github.com/sjsanc?tab=repositories&q=bellum&type=&language=&sort=",
+        "website": ""
+    },
+    {
+        "name": "An Imperial Simulation",
+        "desc": "An empire simulator that takes inspiration from Orteil's Neverending Legacy. Build and nurture a settlement in a hostile world.",
+        "github": "https://github.com/sjsanc/an-imperial-simulation",
+        "website": "https://an-imperial-simulation.netlify.app/"
+    },
+    {
+        "name": "SpawnerJS",
+        "desc": "Another framework for building Javascript UIs in a functional style. Originally written because I didn't want to learn PHP or jQuery.",
+        "github": "https://github.com/sjsanc/spawnerjs",
+        "website": ""
+    },
+    {
+        "name": "RisutoCrypto",
+        "desc": "A little demonstrative dashboard displaying current crypto prices",
+        "github": "https://github.com/sjsanc/risuto-crypto",
+        "website": "https://confident-sammet-b6edfe.netlify.app/"
+    }
 ]
