@@ -18,10 +18,12 @@ const Layout = (props: { children? }) => {
   const [currentSection, setCurrentSection] = useState<string>();
   const [expanded, setExpanded] = useState<boolean>();
 
-  // incase page loads outside index
   useEffect(() => {
     let s = window.location.pathname.replace("/", "");
     setCurrentSection(s.charAt(0).toUpperCase() + s.slice(1));
+  }, []);
+
+  useEffect(() => {
     currentSection !== "" ? setExpanded(true) : null;
   }, []);
 
@@ -63,10 +65,6 @@ const Layout = (props: { children? }) => {
               {btn}
             </a>
           ))}
-          {/* <a href="src/resume.docx" className="externalLink">
-            Résumé
-            <FeatherIcon icon="external-link" />
-          </a> */}
         </Links>
       </Menu>
       {props.children ? (
@@ -162,19 +160,6 @@ const Links = styled.ul`
   .activeLink {
     &:before {
       height: 100% !important;
-    }
-  }
-  .externalLink {
-    svg {
-      opacity: 0;
-      height: 30px;
-      transition: 0.2s ease-in-out;
-      margin-left: 5px;
-    }
-    &:hover svg {
-      transition: 0.2s ease-in-out;
-      display: initial;
-      opacity: 100;
     }
   }
 `;

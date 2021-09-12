@@ -1,24 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const colours = {
-  games: "#92374D",
-  typescript: "#8C5383",
-  framework: "#559CAD",
-  platform: "#4A5899",
+const colors = {
+  typescript: "#B3D5FA",
+  game: "#dfbb39",
+  demo: "#FCAC9C",
+  framework: "#d4a6d4",
+  website: "#22a275",
 };
 
-export default function Tag(props: { name: string }) {
-  return <StyledTag style={{ backgroundColor: colours[props.name] }}>{props.name}</StyledTag>;
+export default function Tag(props: { text: string }) {
+  return <StyledDiv style={{ background: colors[`${props.text}`] }}>{props.text}</StyledDiv>;
 }
 
-const StyledTag = styled.div`
+const StyledDiv = styled.div`
   display: inline;
-  color: white;
-  padding: 3px;
-  font-size: 0.7em;
-  font-family: monospace;
+  padding: 2px 4px;
   border-radius: 3px;
-  opacity: 0.8;
-  margin: 2px 2px 2px 0;
+  color: white;
+  font-family: monospace;
+  font-size: 9px;
+  margin-right: 3px;
 `;
