@@ -20,5 +20,4 @@ const StyledDiv = styled.div`
   color: white;
   font-family: monospace;
   font-size: 9px;
-  margin-right: 3px;
 `;

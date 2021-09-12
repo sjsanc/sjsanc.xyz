@@ -6,14 +6,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import FlipMove from "react-flip-move";
 import { findKey, intersects } from "../utils/utils";
 
-interface ProjectInterface {
-  name: string;
-  desc: string;
-  github?: string;
-  website?: string;
-  tags?: string[];
-}
-
 const query = graphql`
   query ProjectsQuery {
     allProjectsJson {
@@ -38,6 +30,7 @@ export default function ProjectsPage() {
   const projects = findKey(data, "projects");
   const categories = findKey(data, "categories");
 
+  // filters which project tiles show up
   const [filter, setFilter] = useState<string[]>(categories);
 
   const toggleFilter = (evt: React.MouseEvent<HTMLSpanElement>) => {
@@ -59,7 +52,7 @@ export default function ProjectsPage() {
         <span>
           <h3>{props.proj.name}</h3>
         </span>
-        <div>
+        <div className="filterList">
           {props.proj.tags.map((tag, i) => (
             <Tag key={i} text={tag} />
           ))}
@@ -89,17 +82,18 @@ export default function ProjectsPage() {
           Here's a collection of stuff I've made or am making. I mostly build things with Typescript
           + React.
         </p>
-        <div className="filterList">
-          <p>Filter: </p>
+        <div className="filterList clickableFilter">
+          <p>Click to filter: </p>
           {categories.map((c) => (
-            <span key={c} id={c} onClick={toggleFilter}>
+            <div key={c} id={c} onClick={toggleFilter}>
               <Tag text={c} />
-            </span>
+            </div>
           ))}
         </div>
         <FlipMove className="projectList">
           {projects
             .filter((p) => (p ? intersects(p.tags, filter) : null))
+            .sort((p) => p.name)
             .map((proj: ProjectInterface, i) => (
               <ProjectItem proj={proj} key={i} />
             ))}
@@ -121,6 +115,10 @@ const Projects = styled.div`
     padding: 20px;
   }
 
+  > * {
+    margin-bottom: 8px;
+  }
+
   .deselectedFilter {
     > div {
       opacity: 0.3;
@@ -130,13 +128,18 @@ const Projects = styled.div`
   .filterList {
     display: flex;
     align-items: center;
-
-    div {
-      cursor: pointer;
-    }
+    margin: 5px 0;
 
     > * {
       margin-right: 5px;
+    }
+  }
+
+  .clickableFilter {
+    div {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -144,7 +147,7 @@ const Projects = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
 
     @media screen and (max-width: 992px) {
       grid-template-columns: 1fr;

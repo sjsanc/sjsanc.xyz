@@ -6,11 +6,6 @@ import FeatherIcon from "feather-icons-react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import monokai from "react-syntax-highlighter/dist/esm/styles/hljs/monokai";
 
-interface Link {
-  link: string;
-  name: string;
-}
-
 const links: Link[] = [
   { link: "https://github.com/sjsanc", name: "github" },
   { link: "https://www.linkedin.com/in/steven-scheepers-72b45b131/", name: "linkedin" },
